@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Template.Community.Api", "Bot.Template.Community.Api\Bot.Template.Community.Api.csproj", "{DC3B0B4B-1D99-4272-83CB-91847150E308}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bot.Template.Community.Api", "Bot.Template.Community.Api\Bot.Template.Community.Api.csproj", "{DC3B0B4B-1D99-4272-83CB-91847150E308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Template.Community.Watson.Assistant", "Bot.Template.Community.Watson.Assistant\Bot.Template.Community.Watson.Assistant.csproj", "{4D93CC20-D7A8-44A9-BE23-9382C8A010C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DC3B0B4B-1D99-4272-83CB-91847150E308}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC3B0B4B-1D99-4272-83CB-91847150E308}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC3B0B4B-1D99-4272-83CB-91847150E308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D93CC20-D7A8-44A9-BE23-9382C8A010C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D93CC20-D7A8-44A9-BE23-9382C8A010C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D93CC20-D7A8-44A9-BE23-9382C8A010C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D93CC20-D7A8-44A9-BE23-9382C8A010C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

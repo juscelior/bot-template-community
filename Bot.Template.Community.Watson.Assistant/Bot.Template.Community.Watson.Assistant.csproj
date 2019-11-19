@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IBM.Watson.Assistant.v2" Version="4.0.0" />
+    <PackageReference Include="Microsoft.Bot.Builder" Version="4.6.3" />
+  </ItemGroup>
+
+</Project>
