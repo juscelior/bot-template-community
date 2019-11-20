@@ -24,7 +24,7 @@
     "Bot.Template.Community.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/messages",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
