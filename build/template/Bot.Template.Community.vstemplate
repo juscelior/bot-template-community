@@ -1,0 +1,16 @@
+<VSTemplate Type="ProjectGroup" Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Template for developer Bots</Name>
+    <Description>A project template for building Bot application</Description>
+    <Icon>__TemplateIcon.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection>
+      <SolutionFolder Name="src">
+        <ProjectTemplateLink ProjectName="$projectname$.Api">Bot.Template.Community.Api\MyTemplate.vstemplate</ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="$projectname$.Watson.Assistant">Bot.Template.Community.Watson.Assistant\MyTemplate.vstemplate</ProjectTemplateLink>
+      </SolutionFolder>
+    </ProjectCollection>
+  </TemplateContent>
+</VSTemplate>

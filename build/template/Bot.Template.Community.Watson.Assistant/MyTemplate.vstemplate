@@ -1,0 +1,34 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Description>Bot.Template.Community.Watson.Assistant</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>
+    </DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+    <Hidden>true</Hidden>
+  </TemplateData>
+  <TemplateContent>
+    <Project ReplaceParameters="true" TargetFileName="Bot.Template.Community.Watson.Assistant.csproj" File="Bot.Template.Community.Watson.Assistant.csproj">
+      <Folder Name="Bots" TargetFolderName="Bots">
+        <ProjectItem ReplaceParameters="true" TargetFileName="WatsonBot.cs">WatsonBot.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Model" TargetFolderName="Model">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Generic.cs">Generic.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Input.cs">Input.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Intent.cs">Intent.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Option.cs">Option.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Output.cs">Output.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Response.cs">Response.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Value.cs">Value.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
