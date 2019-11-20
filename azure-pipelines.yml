@@ -27,7 +27,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    packagesToPack: '**/*.csproj'
+    packagesToPack: '**/Bot.Template.Community.Api.csproj'
     versioningScheme: 'byBuildNumber'
 
 - task: PowerShell@2
