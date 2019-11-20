@@ -41,12 +41,6 @@ steps:
   inputs:
     command: 'restore'
 
-- task: DotNetCoreCLI@2
-  displayName: 
-  inputs:
-    command: 'restore'
-    projects: 'tests/**/*.csproj'
-
 - task: VSBuild@1
   inputs:
     solution: '**\*.sln'
