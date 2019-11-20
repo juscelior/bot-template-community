@@ -24,6 +24,12 @@ steps:
   inputs:
     versionSpec: 5.x
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    versioningScheme: 'byBuildNumber'
+
 - task: PowerShell@2
   displayName: Update version
   inputs:
