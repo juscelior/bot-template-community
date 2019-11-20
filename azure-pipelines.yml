@@ -17,12 +17,18 @@ steps:
 - task: UseDotNet@2
   inputs:
     packageType: 'sdk'
-    version: '3.0.100-preview5-011568'
+    version: '2.2.x'
     includePreviewVersions: true
 
 - task: NuGetToolInstaller@1
   inputs:
-    versionSpec: 5.1.0
+    versionSpec: 5.x
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/Bot.Template.Community.Api.csproj'
+    versioningScheme: 'byBuildNumber'
 
 - task: PowerShell@2
   displayName: Update version
