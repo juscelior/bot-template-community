@@ -1,0 +1,69 @@
+trigger:
+- '*'
+
+pool:
+  vmImage: 'windows-2019'
+
+variables:
+  patch: $[counter('versioncounter', 89)]
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+
+name: 1.0.$(patch)
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '3.0.100-preview5-011568'
+    includePreviewVersions: true
+
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: 5.1.0
+
+- task: PowerShell@2
+  displayName: Update version
+  inputs:
+    filePath: 'build\update-version.ps1'
+    arguments: '$(Build.BuildNumber)'
+    pwsh: true
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+
+- task: DotNetCoreCLI@2
+  displayName: 
+  inputs:
+    command: 'restore'
+    projects: 'tests/**/*.csproj'
+
+- task: VSBuild@1
+  inputs:
+    solution: '**\*.sln'
+    maximumCpuCount: true
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: VSTest@2
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: |
+      README.md
+      build/**
+      **/*.vsix
+      **/*.nupkg
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishPipelineArtifact@0
+  inputs:
+    artifactName: 'drop'
+    targetPath: '$(Build.ArtifactStagingDirectory)'

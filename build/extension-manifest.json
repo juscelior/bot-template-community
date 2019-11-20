@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json.schemastore.org/vsix-publish",
+    "categories": [
+        "Coding"
+    ],
+    "identity": {
+        "internalName": "bot-template-community",
+        "tags": [
+            "bot"
+        ]
+    },
+    "overview": "../README.md",
+    "priceCategory": "free",
+    "publisher": "Juscélio Reis",
+    "private": false,
+    "qna": true,
+    "repo": "https://github.com/juscelior/bot-template-community"
+}
