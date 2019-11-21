@@ -41,6 +41,12 @@ steps:
   inputs:
     command: 'restore'
 
+- task: PowerShell@2
+  displayName: Update version
+  inputs:
+    filePath: 'build\gen-vstemplate.ps1'
+    pwsh: true
+
 - task: VSBuild@1
   inputs:
     solution: '**\*.sln'
