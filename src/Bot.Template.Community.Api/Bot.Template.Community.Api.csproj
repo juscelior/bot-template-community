@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Bot.Template.Community.Watson.Assistant\Bot.Template.Community.Watson.Assistant.csproj" />
+    <ProjectReference Include="..\Bot.Template.Community.Api.Watson.Assistant\Bot.Template.Community.Api.Watson.Assistant.csproj" />
   </ItemGroup>
 
 </Project>

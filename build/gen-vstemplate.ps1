@@ -74,15 +74,6 @@ Copy-Item -Path ($buildDir.Path + '/Bot.Template.Community.vstemplate') -Destina
 [xml]$content = Get-Content ($templateDir.Path + '/Bot.Template.Community.vstemplate')
 $xdNS = $content.DocumentElement.NamespaceURI
 
-$customParameter = $content.CreateNode("element","CustomParameter",$xdNS)
-$customParameter.SetAttribute("Name","`$safeprojectname`$")
-$customParameter.SetAttribute("Value",$projectName)
-
-$customParameters = $content.CreateNode("element","CustomParameters",$xdNS)
-$customParameters.AppendChild($customParameter)
-
-$content.VSTemplate.TemplateContent.AppendChild($customParameters)
-
 foreach ($p in $projects) {
     $files = Get-ChildItem $p.FullName | 
                 Where-Object{$_.Name -notin $ignore} | 
@@ -91,8 +82,9 @@ foreach ($p in $projects) {
     New-Item -Path $templateDir.Path -Name $p.Name -ItemType "directory"
 
     $projectTemplateLink = $content.CreateNode("element","ProjectTemplateLink",$xdNS)
+
     $projectTemplateLink.SetAttribute("ProjectName","`$projectname`$" + ($p.Name -replace $projectName,""))
-    $projectTemplateLink.SetAttribute("CopyParameters","True")
+    #$projectTemplateLink.SetAttribute("CopyParameters","True")
     $projectTemplateLink.AppendChild($content.CreateTextNode($p.Name+"\MyTemplate.vstemplate"))
     
     $content.VSTemplate.TemplateContent.ProjectCollection.SolutionFolder.AppendChild($projectTemplateLink)
@@ -122,10 +114,12 @@ foreach ($p in $projects) {
 
             $vstemplate.VSTemplate.TemplateContent.Project.AppendChild($projectItem)
         }elseif($f.Name.EndsWith('.csproj')){
-            ((Get-Content -path ($templateDir.Path + '/' + $p.Name + '/' + $f.Name) -Raw) -replace $projectName,"`$ext_safeprojectname`$") | Set-Content -Path ($templateDir.Path + '/' + $p.Name + '/' + $f.Name)
+            ((Get-Content -path ($templateDir.Path + '/' + $p.Name + '/' + $f.Name) -Raw) -replace ($projectName + '.Api'),"`$safeprojectname`$") | Set-Content -Path ($templateDir.Path + '/' + $p.Name + '/' + $f.Name)
         }
     }
     
+
+
     $vstemplate.Save(($templateDir.Path + '/' + $p.Name + '/MyTemplate.vstemplate'))
 }
 
