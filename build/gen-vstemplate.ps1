@@ -123,6 +123,8 @@ Add-Type -assembly "system.io.compression.filesystem"
 
 $zipPath = ($FullPath.Path + '\Bot.Template.Community\ProjectTemplates\' + $projectName + '.zip')
 
+New-Item -Path ($FullPath.Path + '\Bot.Template.Community') -Name "ProjectTemplates" -ItemType "directory"
+
 $FileExists = Test-Path $zipPath
 
 If ($FileExists -eq $True) {
