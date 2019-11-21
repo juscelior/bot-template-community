@@ -53,7 +53,7 @@ function Append-node {
 }
 
 #onlylocal
-$PSScriptRoot = 'Z:\dev\bot-template\Bot.Template.Community\build'
+#$PSScriptRoot = 'Z:\dev\bot-template\Bot.Template.Community\build'
 # Update NuGet package version
 $projectName = 'Bot.Template.Community'
 $FullPath = Resolve-Path $PSScriptRoot\..\src
