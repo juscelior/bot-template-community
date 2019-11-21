@@ -59,10 +59,12 @@ function Append-node {
 $projectName = 'Bot.Template.Community'
 $FullPath = Resolve-Path $PSScriptRoot\..\src
 $buildDir = Resolve-Path $FullPath\..\build
+
+New-Item -Path $buildDir.Path -Name "template" -ItemType "directory"
+
 $templateDir = Resolve-Path $FullPath\..\build\template
 $ignore = @('bin', 'Bot.Template.Community', 'obj', '*.sln', '.*', '*.cache')
 
-New-Item -Path $buildDir.Path -Name "template" -ItemType "directory"
 
 $projects = Get-ChildItem $FullPath -Exclude $ignore | Select-Object Name, FullName
 
