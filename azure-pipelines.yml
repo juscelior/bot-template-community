@@ -42,7 +42,7 @@ steps:
     command: 'restore'
 
 - task: PowerShell@2
-  displayName: Update version
+  displayName: Generate template
   inputs:
     filePath: 'build\gen-vstemplate.ps1'
     pwsh: true
