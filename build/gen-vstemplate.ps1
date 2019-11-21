@@ -62,6 +62,8 @@ $buildDir = Resolve-Path $FullPath\..\build
 $templateDir = Resolve-Path $FullPath\..\build\template
 $ignore = @('bin', 'Bot.Template.Community', 'obj', '*.sln', '.*', '*.cache')
 
+New-Item -Path $buildDir.Path -Name "template" -ItemType "directory"
+
 $projects = Get-ChildItem $FullPath -Exclude $ignore | Select-Object Name, FullName
 
 Copy-Item -Path ($buildDir.Path + '/__TemplateIcon.ico') -Destination ($templateDir.Path + '/__TemplateIcon.ico') -Recurse -Force
