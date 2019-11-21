@@ -123,7 +123,11 @@ Add-Type -assembly "system.io.compression.filesystem"
 
 $zipPath = ($FullPath.Path + '\Bot.Template.Community\ProjectTemplates\' + $projectName + '.zip')
 
-Remove-Item –path $zipPath
+$FileExists = Test-Path $zipPath
+
+If ($FileExists -eq $True) {
+    Remove-Item –path $zipPath
+}
 
 [io.compression.zipfile]::CreateFromDirectory($templateDir, $zipPath)
 
