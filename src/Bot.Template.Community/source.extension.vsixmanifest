@@ -3,7 +3,7 @@
     <Metadata>
         <Identity Id="Bot.Template.Community.ed07b025-0ad4-491b-b950-e12f619494bc" Version="1.0" Language="en-US" Publisher="Juscélio Reis" />
         <DisplayName>Bot Template Community</DisplayName>
-        <Description xml:space="preserve">Empty VSIX Project.</Description>
+        <Description xml:space="preserve">Bot Template Community</Description>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />

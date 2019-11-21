@@ -1,7 +1,7 @@
 {
     "$schema": "http://json.schemastore.org/vsix-publish",
     "categories": [
-        "Coding"
+        "other templates"
     ],
     "identity": {
         "internalName": "bot-template-community",

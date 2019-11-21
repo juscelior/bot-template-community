@@ -112,6 +112,8 @@ foreach ($p in $projects) {
             $projectItem.AppendChild($vstemplate.CreateTextNode($f.Name))
 
             $vstemplate.VSTemplate.TemplateContent.Project.AppendChild($projectItem)
+        }elseif($f.Name.EndsWith('.csproj')){
+            ((Get-Content -path $f.FullName -Raw) -replace $projectName,"`$projectname`$") | Set-Content -Path $f.FullName
         }
     }
     
