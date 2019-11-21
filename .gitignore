@@ -339,3 +339,5 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 /Bot.Template.Community/ProjectTemplates/Bot.Template.Community.zip
+/build/template
+/src/Bot.Template.Community/ProjectTemplates/Bot.Template.Community.zip

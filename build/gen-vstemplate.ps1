@@ -53,7 +53,8 @@ function Append-node {
     return $item
 }
 
-$PSScriptRoot = 'Z:\dev\bot-template\Bot.Template.Community\build'
+#onlylocal
+#$PSScriptRoot = 'Z:\dev\bot-template\Bot.Template.Community\build'
 # Update NuGet package version
 $projectName = 'Bot.Template.Community'
 $FullPath = Resolve-Path $PSScriptRoot\..\src
@@ -116,7 +117,11 @@ foreach ($p in $projects) {
 
 Add-Type -assembly "system.io.compression.filesystem"
 
-[io.compression.zipfile]::CreateFromDirectory($templateDir, ($FullPath.Path + '\Bot.Template.Community\' + $projectName + '.zip'))
+$zipPath = ($FullPath.Path + '\Bot.Template.Community\ProjectTemplates\' + $projectName + '.zip')
+
+Remove-Item –path $zipPath
+
+[io.compression.zipfile]::CreateFromDirectory($templateDir, $zipPath)
 
 
 
