@@ -1,5 +1,4 @@
-﻿# Microsoft PowerShell script to create a simple function
-# Author: Juscélio Reis
+﻿# Author: Juscélio Reis
 function Append-node {
     Param
     (
@@ -113,7 +112,7 @@ foreach ($p in $projects) {
 
             $vstemplate.VSTemplate.TemplateContent.Project.AppendChild($projectItem)
         }elseif($f.Name.EndsWith('.csproj')){
-            ((Get-Content -path $f.FullName -Raw) -replace $projectName,"`$projectname`$") | Set-Content -Path $f.FullName
+            ((Get-Content -path ($templateDir.Path + '/' + $p.Name + '/' + $f.Name) -Raw) -replace $projectName,"`$projectname`$") | Set-Content -Path ($templateDir.Path + '/' + $p.Name + '/' + $f.Name)
         }
     }
     
